@@ -1,0 +1,24 @@
+From 3debb12bcf48f79e7cf683d645cea1b957d5ee97 Mon Sep 17 00:00:00 2001
+From: Alex Deryskyba <alex@codesnake.com>
+Date: Tue, 14 Jul 2015 15:55:20 +0300
+Subject: [PATCH 12/17] Add mapping for Browser Home key on Linux
+
+---
+ xbmc/input/linux/LinuxInputDevices.cpp | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/xbmc/input/linux/LinuxInputDevices.cpp b/xbmc/input/linux/LinuxInputDevices.cpp
+index 32a3b46..b51941e 100644
+--- a/xbmc/input/linux/LinuxInputDevices.cpp
++++ b/xbmc/input/linux/LinuxInputDevices.cpp
+@@ -243,6 +243,7 @@ KeyMap keyMap[] = {
+   { KEY_RECORD        , XBMCK_RECORD      },
+   { KEY_REWIND        , XBMCK_REWIND      },
+   { KEY_PHONE         , XBMCK_PHONE       },
++  { KEY_HOMEPAGE      , XBMCK_BROWSER_HOME},
+   { KEY_REFRESH       , XBMCK_SHUFFLE     },
+   { KEY_SCROLLUP      , XBMCK_PAGEUP      },
+   { KEY_SCROLLDOWN    , XBMCK_PAGEDOWN    },
+-- 
+1.9.1
+
