@@ -43,15 +43,18 @@ done
 
 echo "$hdmimode" > /sys/class/display/mode
 
-# Enable framebuffer device
+# Enable first framebuffer device
 echo 0 > /sys/class/graphics/fb0/blank
+
+# Disable second framebuffer
+echo 1 > /sys/class/graphics/fb1/blank
 
 # Blank fb1 to prevent static noise
 echo 1 > /sys/class/graphics/fb1/blank
 
 # Disable framebuffer scaling
 echo 0 > /sys/class/graphics/fb0/free_scale
-echo 0 > /sys/class/graphics/fb1/free_scale
+#echo 0 > /sys/class/graphics/fb1/free_scale
 
 # Set framebuffer geometry to match the resolution
 case "$hdmimode" in
