@@ -332,7 +332,7 @@
     $MOUNT_CMD "$MOUNT_TARGET" "$2" "$3" "$4"
   }
 
-  update() {
+  update_file() {
     if [ -f "$UPDATE_DIR/$2" -a -f "$3" ]; then
       echo "updating $1..."
       mount -o remount,rw /flash
@@ -656,7 +656,7 @@
               update_file "Kernel" "$UPDATE_KERNEL" "/flash/$IMAGE_KERNEL"
               ;;
           esac
-          update "System" "$UPDATE_SYSTEM" "/flash/$IMAGE_SYSTEM"
+          update_file "System" "$UPDATE_SYSTEM" "/flash/$IMAGE_SYSTEM"
           update_bootloader
           rm -rf $UPDATE_DIR/[0-9a-zA-Z]* &>/dev/null
           do_reboot
